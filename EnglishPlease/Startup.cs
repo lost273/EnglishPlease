@@ -37,6 +37,7 @@ namespace EnglishPlease
                 app.UseExceptionHandler("/Home/Error");
             }
 
+            app.UseStatusCodePages();
             app.UseStaticFiles();
 
             app.UseMvc(routes =>
