@@ -1,0 +1,11 @@
+D:\prog\VSProj\GIT\EnglishPlease\EnglishPlease\bin\Debug\netcoreapp2.0\EnglishPlease.deps.json
+D:\prog\VSProj\GIT\EnglishPlease\EnglishPlease\bin\Debug\netcoreapp2.0\EnglishPlease.runtimeconfig.json
+D:\prog\VSProj\GIT\EnglishPlease\EnglishPlease\bin\Debug\netcoreapp2.0\EnglishPlease.runtimeconfig.dev.json
+D:\prog\VSProj\GIT\EnglishPlease\EnglishPlease\bin\Debug\netcoreapp2.0\EnglishPlease.dll
+D:\prog\VSProj\GIT\EnglishPlease\EnglishPlease\bin\Debug\netcoreapp2.0\EnglishPlease.pdb
+D:\prog\VSProj\GIT\EnglishPlease\EnglishPlease\obj\Debug\netcoreapp2.0\EnglishPlease.csprojResolveAssemblyReference.cache
+D:\prog\VSProj\GIT\EnglishPlease\EnglishPlease\obj\Debug\netcoreapp2.0\EnglishPlease.csproj.CoreCompileInputs.cache
+D:\prog\VSProj\GIT\EnglishPlease\EnglishPlease\obj\Debug\netcoreapp2.0\EnglishPlease.AssemblyInfoInputs.cache
+D:\prog\VSProj\GIT\EnglishPlease\EnglishPlease\obj\Debug\netcoreapp2.0\EnglishPlease.AssemblyInfo.cs
+D:\prog\VSProj\GIT\EnglishPlease\EnglishPlease\obj\Debug\netcoreapp2.0\EnglishPlease.dll
+D:\prog\VSProj\GIT\EnglishPlease\EnglishPlease\obj\Debug\netcoreapp2.0\EnglishPlease.pdb
