@@ -28,8 +28,13 @@ namespace EnglishPlease
             services.AddDbContext<AppIdentityDbContext>(options =>
                 options.UseSqlServer(
                     Configuration["Data:EnglishPleaseIdentity:ConnectionString"]));
-            services.AddIdentity<AppUser, IdentityRole>()
-                .AddEntityFrameworkStores<AppIdentityDbContext>();
+            services.AddIdentity<AppUser, IdentityRole>(opts => {
+                opts.User.RequireUniqueEmail = true;
+                opts.Password.RequiredLength = 6;
+                opts.Password.RequireNonAlphanumeric = false;
+                opts.Password.RequireLowercase = false;
+                opts.Password.RequireUppercase = false;
+            }).AddEntityFrameworkStores<AppIdentityDbContext>();
             services.AddMvc();
         }
 
