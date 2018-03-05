@@ -10,8 +10,17 @@ namespace EnglishPlease.Controllers
 {
     public class AdminController : Controller {
         private UserManager<AppUser> userManager;
-        public AdminController(UserManager<AppUser> usrMgr) {
+        private IUserValidator<AppUser> userValidator;
+        private IPasswordValidator<AppUser> passwordValidator;
+        private IPasswordHasher<AppUser> passwordHasher;
+        public AdminController(UserManager<AppUser> usrMgr,
+            IUserValidator<AppUser> userValid,
+            IPasswordValidator<AppUser> passValid,
+            IPasswordHasher<AppUser> passwordHash) {
             userManager = usrMgr;
+            userValidator = userValid;
+            passwordValidator = passValid;
+            passwordHasher = passwordHash;
         }
         public ViewResult Index() => View(userManager.Users);
         public ViewResult Create() => View();
