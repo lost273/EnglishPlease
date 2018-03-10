@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using EnglishPlease.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -10,8 +11,10 @@ namespace EnglishPlease.Controllers
 {
     public class RoleAdminController : Controller {
         private RoleManager<IdentityRole> roleManager;
-        public RoleAdminController(RoleManager<IdentityRole> roleMgr) {
+        private UserManager<AppUser> userManager;
+        public RoleAdminController(RoleManager<IdentityRole> roleMgr, UserManager<AppUser> userMrg) {
             roleManager = roleMgr;
+            userManager = userMrg;
         }
         public ViewResult Index() => View(roleManager.Roles);
         public IActionResult Create() => View();
