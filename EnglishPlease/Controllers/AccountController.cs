@@ -40,5 +40,10 @@ namespace EnglishPlease.Controllers
             }
             return View(details);
         }
+        [Authorize]
+        public async Task<ActionResult> Logout() {
+            await signInManager.SignOutAsync();
+            return RedirectToAction("Index","Home");
+        }
     }
 }

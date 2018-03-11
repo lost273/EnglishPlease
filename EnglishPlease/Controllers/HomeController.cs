@@ -12,28 +12,16 @@ namespace EnglishPlease.Controllers
     public class HomeController : Controller
     {
         [Authorize]
-        public IActionResult Index()
-        {
-            return View();
-        }
-
-        public IActionResult About()
-        {
-            ViewData["Message"] = "Your application description page.";
-
-            return View();
-        }
-
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
-        }
-
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+        public IActionResult Index() => View(GetData(nameof(Index)));
+        [Authorize(Roles = "Users")]
+        public IActionResult OtherAction() => View("Index", GetData(nameof(OtherAction)));
+        private Dictionary<string, object> GetData(string actionName) =>
+            new Dictionary<string, object> {
+                ["Action"] = actionName,
+                ["User"] = HttpContext.User.Identity.Name,
+                ["Authenticated"] = HttpContext.User.Identity.IsAuthenticated,
+                ["Auth Type"] = HttpContext.User.Identity.AuthenticationType,
+                ["In Users Role"] = HttpContext.User.IsInRole("Users")
+            };
     }
 }
