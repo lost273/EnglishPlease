@@ -1,4 +1,5 @@
 ﻿using EnglishPlease.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -7,8 +8,8 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace EnglishPlease.Controllers
-{
+namespace EnglishPlease.Controllers {
+    [Authorize(Roles = "Admins")]
     public class RoleAdminController : Controller {
         private RoleManager<IdentityRole> roleManager;
         private UserManager<AppUser> userManager;
