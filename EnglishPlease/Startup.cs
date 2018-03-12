@@ -60,7 +60,9 @@ namespace EnglishPlease
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
-            AppIdentityDbContext.CreateAdminAccount(app.ApplicationServices, Configuration).Wait();
+            using (var serviceScope = app.ApplicationServices.CreateScope()) {
+                AppIdentityDbContext.CreateAdminAccount(serviceScope.ServiceProvider, Configuration).Wait();
+            }
         }
     }
 }
